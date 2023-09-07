@@ -31,17 +31,20 @@ addButtonEl.addEventListener("click", function () {
 });
 
 onValue(shoppingListInDB, function (snapshot) {
-  let itemsArray = Object.entries(snapshot.val());
-  // console.log(itemsArray);
+  if (snapshot.exists()) {
+    let itemsArray = Object.entries(snapshot.val());
 
-  clearShoppingListEl();
+    clearShoppingListEl();
 
-  for (let i = 0; i < itemsArray.length; i++) {
-    let currentItem = itemsArray[i];
-    let currentItemID = currentItem[0];
-    let currentItemValue = currentItem[1];
+    for (let i = 0; i < itemsArray.length; i++) {
+      let currentItem = itemsArray[i];
+      let currentItemID = currentItem[0];
+      let currentItemValue = currentItem[1];
 
-    appendItemTo(currentItem);
+      appendItemTo(currentItem);
+    }
+  } else {
+    shoppingListEl.innerHTML = "No items here... yet";
   }
 });
 
@@ -69,3 +72,26 @@ function appendItemTo(item) {
 
   shoppingListEl.append(newEl);
 }
+
+const darkModeToggleEl = document.getElementById("dark-mode-toggle");
+
+darkModeToggleEl.addEventListener("click", function () {
+  const currentTheme = document.body.getAttribute("data-theme");
+
+  if (currentTheme === "dark") {
+    document.body.setAttribute("data-theme", "light");
+  } else {
+    document.body.setAttribute("data-theme", "dark");
+  }
+
+  localStorage.setItem("theme", document.body.getAttribute("data-theme"));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    document.body.setAttribute("data-theme", savedTheme);
+  } else {
+    document.body.setAttribute("data-theme", "light");
+  }
+});

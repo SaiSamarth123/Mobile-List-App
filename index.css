@@ -1,10 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Default light mode colors */
+:root {
+    --background-color: #f2f7ff;
+    --text-color: #2d2d2d;
+    --input-bg-color: #ffffff;
+    --button-bg-color: #07f49e;
+    /* Changed to given color */
+    --button-hover-bg-color: #42047e;
+    /* Changed to given color */
+    --list-bg-color: #eaf2ff;
+    --list-hover-bg-color: #c8d6e5;
+}
+
+/* Dark mode colors */
+[data-theme="dark"] {
+    --background-color: #1f1f1f;
+    --text-color: #f2f2f2;
+    --input-bg-color: #2d2d2d;
+    --button-bg-color: #7474a6;
+    /* Complementary color for dark mode */
+    --button-hover-bg-color: #5a5a80;
+    /* Complementary color for dark mode */
+    --list-bg-color: #2d2d2d;
+    --list-hover-bg-color: #404040;
+}
 
 html,
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Rubik', sans-serif;
-    background-color: #EEF0F4;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    user-select: none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -20,27 +50,33 @@ img {
 }
 
 input {
-    color: #432000;
-    background-color: #DCE1EB;
+    color: var(--text-color);
+    background-color: var(--input-bg-color);
     border: 0;
     padding: 15px;
     border-radius: 8px;
     font-size: 20px;
     text-align: center;
-    font-family: 'Rubik', sans-serif;
     margin: 10px 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button {
-    color: #FDFDFD;
-    background-color: #AC485A;
+    color: #ffffff;
+    background-color: var(--button-bg-color);
     border: 0;
     padding: 15px;
     border-radius: 8px;
     font-size: 20px;
     text-align: center;
-    font-family: 'Rubik', sans-serif;
+    transition: background-color 0.3s;
 }
+
+button:hover {
+    background-color: var(--button-hover-bg-color);
+    cursor: pointer;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -51,10 +87,16 @@ ul {
 
 ul li {
     font-size: 20px;
-    background-color: #FFFDF8;
+    background-color: var(--list-bg-color);
     padding: 15px;
     border-radius: 8px;
     flex-grow: 1;
     text-align: center;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2)
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+ul li:hover {
+    background-color: var(--list-hover-bg-color);
+    cursor: pointer;
 }
