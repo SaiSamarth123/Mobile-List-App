@@ -5,25 +5,25 @@
     --background-color: #f2f7ff;
     --text-color: #2d2d2d;
     --input-bg-color: #ffffff;
-    --button-bg-color: #07f49e;
-    /* Changed to given color */
-    --button-hover-bg-color: #42047e;
-    /* Changed to given color */
-    --list-bg-color: #eaf2ff;
-    --list-hover-bg-color: #c8d6e5;
+    --button-bg-color: #471069;
+    --button-hover-bg-color: #009ffd;
+    --button-text-color: #000000;
+    --list-bg-color: #e8c547;
+    --list-hover-bg-color: #a9ff68;
+    --list-text-color: #2d2d2d;
 }
 
 /* Dark mode colors */
 [data-theme="dark"] {
     --background-color: #1f1f1f;
-    --text-color: #f2f2f2;
+    --text-color: #00272b;
     --input-bg-color: #2d2d2d;
-    --button-bg-color: #7474a6;
-    /* Complementary color for dark mode */
-    --button-hover-bg-color: #5a5a80;
-    /* Complementary color for dark mode */
-    --list-bg-color: #2d2d2d;
-    --list-hover-bg-color: #404040;
+    --button-bg-color: #009ffd;
+    --button-hover-bg-color: #8000ff;
+    --button-text-color: #ffffff;
+    --list-bg-color: #f18f01;
+    --list-hover-bg-color: #cbff49;
+    --list-text-color: #000000;
 }
 
 html,
